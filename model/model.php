@@ -49,7 +49,7 @@ class login_model{
 
     public function update_attempts($ip,$identifire){
         global $db ;
-        $query = $db->prepare("update  login_attempts set attempts = attempts+1 where  ip= :ip and identifier=:identifier") ;
+        $query = $db->prepare("UPDATE  login_attempts set attempts = attempts+1 where  ip= :ip and identifier=:identifier") ;
         $query->bindParam(":ip",$ip,PDO::PARAM_STR) ;
         $query->bindParam(":identifier",$identifire,PDO::PARAM_STR) ;
         $query->execute() ;
@@ -57,7 +57,7 @@ class login_model{
 
     public function check_login($user){
         global $db ;
-        $query = $db->prepare("select * from members where username= :username") ;
+        $query = $db->prepare("SELECT * from members where username= :username") ;
         $query->bindParam(":username",$user,PDO::PARAM_STR) ;
         $resualt = $query->execute() ;
         if($resualt){
