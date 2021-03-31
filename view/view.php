@@ -2,7 +2,7 @@
 class login_view {
     public $error_msg;
     public $require_captcha;
-    public function login_render()
+    public function render()
     {
 
           ?>
